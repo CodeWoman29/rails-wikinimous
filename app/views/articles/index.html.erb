@@ -1,0 +1,11 @@
+<a class = "navbar-brand" href="/"> Wikinimous </a>
+<a href = "/articles/new"> New Article </a>
+
+
+<% @articles.each do |article| %>
+  <h2><%=  article.title %></h2>
+  <%= link_to article.title, article_path(article) %>
+<%= link_to 'edit', edit_article_path(article) %> - <%= link_to 'remove', article_path(article), method: :delete, data: { confirm: 'are you sure?' } %>
+    <% end %>
+
+
